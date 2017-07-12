@@ -10,7 +10,7 @@ npm install
 
 Configure your database in './utils/database_utils/database_connection.js' 
 
-`
+```javascript
 //Initial routes:
     // Add a new user to the system
     POST: /api/create-new-user
@@ -28,4 +28,4 @@ Configure your database in './utils/database_utils/database_connection.js'
         
      // Authenticated route. Requires 'access-token' header to be set   
      GET: /api/some-other-route
-`
+```
