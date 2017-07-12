@@ -10,8 +10,8 @@ npm install
 
 Configure your database in './utils/database_utils/database_connection.js' 
 
-//
-Initial routes:
+// Initial routes:
+    // Add a new user to the system
     POST: /api/create-new-user
         {
             "email": "hello@goodbye.com",
