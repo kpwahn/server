@@ -3,7 +3,11 @@ Express, MySQL, Bcrypt, JWT
 
 
 Make sure you have MySQL set up on you machine. A sql file has been provided for a simple user table
+
+
 npm install
+
+
 Configure your database in './utils/database_utils/database_connection.js' 
 
 
