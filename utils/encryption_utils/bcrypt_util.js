@@ -35,6 +35,8 @@ module.exports = {
                             callback(null, res);
                         }
                     });
+                } else {
+                    callback(null, false);
                 }
             });
         });
