@@ -12,7 +12,7 @@ router.use(function(req, res, next){
         jwt.verify(req.headers['access-token'], constants.secret, function(err, decoded) {
             if (err) {
                 res.status(status_codes.bad_request);
-                return res.json({ err: err, message: 'Failed to authenticate token.' });
+                return res.json({ err: err, message: constants.error_messages.token_auth_failed });
             } else {
                 // If everything is good, save to request for use in other routes
                 //req.decoded = decoded;
@@ -22,7 +22,7 @@ router.use(function(req, res, next){
     } else {
          res.status(403);
          res.send({
-            message: 'No token provided.'
+            message: constants.error_messages.no_token
         });
     }
 });

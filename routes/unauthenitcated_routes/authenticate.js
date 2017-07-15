@@ -2,7 +2,7 @@ let router = require('express').Router();
 let auth_util = require('../../utils/authentication_utils/autenticate_util');
 let post_request_util = require('../../utils/request_utils/post_request_util');
 let status_codes = require('../../utils/request_utils/status_codes');
-let messages = require('../../utils/constants');
+let constants = require('../../utils/constants');
 let bodyParser = require('body-parser');
 
 
@@ -19,7 +19,7 @@ router.post('/', bodyParser.json(), function(req, res) {
             } else if (isAuthenticated) {
                 res.json(isAuthenticated);
             } else {
-                res.json({message: messages.error_messages.invalid_email_or_password});
+                res.json({message: constants.error_messages.invalid_email_or_password});
             }
         });
     }
