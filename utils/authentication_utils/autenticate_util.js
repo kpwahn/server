@@ -12,7 +12,7 @@ exports.authenticate = function(req, callback) {
             });
             callback(null, {message: constants.success_messages.authenticated, token: token});
         } else {
-            callback({"message": cosntants.error_messages.invalid_email_or_password}, false);
+            callback({"message": constants.error_messages.invalid_email_or_password}, false);
         }
     })
 };
