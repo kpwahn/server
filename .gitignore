@@ -3,3 +3,4 @@ node_modules
 # IntelliJ
 *.iml
 /.idea
+sh.exe.stackdump
