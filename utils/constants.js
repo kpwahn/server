@@ -10,7 +10,8 @@ module.exports = {
         invalid_email_or_password: "Invalid email or password",
         no_route_found: 'No route found',
         no_token: 'No token provided',
-        token_auth_failed: 'Failed to authenticate token'
+        token_auth_failed: 'Failed to authenticate token',
+        method_not_allowed: 'The method specified is not allowed for the resource'
 
     },
     success_messages: {

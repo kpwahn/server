@@ -55,4 +55,28 @@ router.post('/', bodyParser.json(), function (req, res) {
     }
 });
 
+router.get('/', function(req, res) {
+  // TODO The response MUST include an Allow header containing a list of valid methods for the requested resource.
+  res.status(status_codes.method_not_allowed);
+  res.json({ message: constants.method_not_allowed});
+});
+
+router.put('/', function(req, res) {
+  // TODO The response MUST include an Allow header containing a list of valid methods for the requested resource.
+  res.status(status_codes.method_not_allowed);
+  res.json({ message: constants.method_not_allowed});
+});
+
+router.patch('/', function(req, res) {
+  // TODO The response MUST include an Allow header containing a list of valid methods for the requested resource.
+  res.status(status_codes.method_not_allowed);
+  res.json({ message: constants.method_not_allowed});
+});
+
+router.delete('/', function(req, res) {
+  // TODO The response MUST include an Allow header containing a list of valid methods for the requested resource.
+  res.status(status_codes.method_not_allowed);
+  res.json({ message: constants.method_not_allowed});
+});
+
 module.exports = router;
