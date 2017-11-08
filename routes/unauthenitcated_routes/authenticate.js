@@ -19,6 +19,7 @@ router.post('/', bodyParser.json(), function(req, res) {
             } else if (isAuthenticated) {
                 res.json(isAuthenticated);
             } else {
+                res.status(status_codes.forbidden);
                 res.json({message: constants.error_messages.invalid_email_or_password});
             }
         });

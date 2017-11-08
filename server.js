@@ -1,4 +1,3 @@
-let https = require('https');
 let constants = require('./utils/constants');
 let express = require('express');
 
