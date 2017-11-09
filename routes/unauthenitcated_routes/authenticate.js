@@ -15,8 +15,10 @@ router.post('/', bodyParser.json(), function(req, res) {
     } else {
         auth_util.authenticate(req, function (err, isAuthenticated) {
             if (err) {
+                res.status(status_codes.internal_server_error);
                 res.json(err);
             } else if (isAuthenticated) {
+                res.status(status_codes.ok);
                 res.json(isAuthenticated);
             } else {
                 res.status(status_codes.forbidden);
