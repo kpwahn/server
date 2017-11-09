@@ -1,7 +1,7 @@
 module.exports = {
     port: 3000,
     secret: 'secret',
-    jwt_expires_in: '10m',
+    jwt_expires_in: '10d',
     error_messages: {
         encrypt: "Could not encrypt password",
         db_connect: "Could not establish connection to the database",
