@@ -1,7 +1,9 @@
 CREATE DATABASE IF NOT EXISTS harry_potter;
 
-DROP TABLE user_table;
-DROP TABLE quiz_table;
+use harry_potter;
+
+DROP TABLE IF EXISTS user_table;
+DROP TABLE IF EXISTS quiz_table;
 
 CREATE TABLE user_table (
     id int NOT NULL AUTO_INCREMENT PRIMARY KEY,

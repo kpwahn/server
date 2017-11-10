@@ -22,6 +22,7 @@ module.exports = {
                 callback(err, false);
             }
             connection.query(sql_statements.select_email, [email], function (err, rows) {
+                connection.release();
                 if (err) {
                     callback(err, false);
                 } else if (rows.length == 1) {

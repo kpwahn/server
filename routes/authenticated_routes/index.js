@@ -31,8 +31,4 @@ router.use(function(req, res, next){
 //TODO Add error handling for other methods to this endpoint
 router.get('/quizes', require('./quizes.js'));
 
-router.get('/', function(req, res){
-    res.send({message: "Authentication successful, but no route found"})
-})
-
 module.exports = router;

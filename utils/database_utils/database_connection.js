@@ -5,7 +5,7 @@ let connection = mysql.createPool({
     user     : 'root',
     password : 'password',
     database : 'harry_potter',
-    port: 3001
+    port: 3306
 });
 
 module.exports = connection;

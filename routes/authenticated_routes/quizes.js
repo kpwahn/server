@@ -10,6 +10,7 @@ module.exports = function (req, res) {
           res.json({ message: constants.error_messages.db_connect, err: err});
       } else {
         connection.query(sql_statements.get_quizes, [req.body.email], function (err, rows) {
+            connection.release();
             if (err) {
                 res.status(status_codes.internal_server_error);
                 res.json({ message: constants.error_messages.db_query, err: err});
