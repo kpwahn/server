@@ -6,7 +6,8 @@ module.exports = {
         encrypt: "Could not encrypt password",
         db_connect: "Could not establish connection to the database",
         db_query: "Could not query the database",
-        duplicate: "Email address already exists",
+        duplicate_email: "Email address already exists",
+        duplicate_quiz: "Quiz name already exists",
         invalid_email_or_password: "Invalid email or password",
         no_route_found: 'No route found',
         no_token: 'No token provided',
@@ -15,10 +16,12 @@ module.exports = {
 
     },
     success_messages: {
-        new_user: "New user successfully created",
-        authenticated: "Authenticated"
+        new_user: "New user created",
+        authenticated: "Authenticated",
+        new_quiz: "New quiz created"
     },
     expected_bodies: {
-        create_new_user: ['email', 'password']
+        create_new_user: ['email', 'password'],
+        create_quiz: ['name', 'book']
     }
 }

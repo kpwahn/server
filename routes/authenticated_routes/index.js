@@ -27,8 +27,6 @@ router.use(function(req, res, next){
     }
 });
 
-// Routes
-//TODO Add error handling for other methods to this endpoint
-router.get('/quizes', require('./quizes.js'));
+//router.get('/something-protected', require('./something-protected.js'));
 
 module.exports = router;
