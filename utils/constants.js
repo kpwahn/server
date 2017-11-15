@@ -23,5 +23,8 @@ module.exports = {
     expected_bodies: {
         create_new_user: ['email', 'password'],
         create_quiz: ['name', 'book']
+    },
+    expected_query_params: {
+      question: ['name']
     }
 }
