@@ -5,61 +5,49 @@ CREATE DATABASE IF NOT EXISTS harry_potter;
 use harry_potter;
 
 DROP TABLE IF EXISTS user_table;
+DROP TABLE IF EXISTS book_table;
 DROP TABLE IF EXISTS quiz_table;
-DROP TABLE IF EXISTS multiple_choice_question_table;
-DROP TABLE IF EXISTS quiz_multiple_choice_question_table;
+DROP TABLE IF EXISTS question_table;
+DROP TABLE IF EXISTS choice_question_table;
+DROP TABLE IF EXISTS answer_table;
 
 CREATE TABLE user_table (
-    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id varchar(36) NOT NULL PRIMARY KEY,
     email varchar(255) NOT NULL,
     password varchar(255) NOT NULL
 );
 
-insert into user_table (email, password) value ("k@k.com", "k");
+insert into user_table values (UUID(), "k@k.com", "k");
 
-CREATE TABLE quiz_table (
-  id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  name varchar(255) NOT NULL,
-  book enum("Harry Potter and the Sorcerer's Stone") NOT NULL
+CREATE TABLE book_table (
+  id varchar(36) NOT NULL PRIMARY KEY,
+  name varchar(255) NOT NULL
 );
 
-CREATE TABLE multiple_choice_question_table (
-  id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE quiz_table (
+  id varchar(36) NOT NULL PRIMARY KEY,
+  name varchar(255) NOT NULL,
+  book_id varchar(36) NOT NULL NOT NULL,
+  FOREIGN KEY (book_id) REFERENCES book_table(id)
+);
+
+CREATE TABLE question_table (
+  id varchar(36) NOT NULL PRIMARY KEY,
   question varchar(255) NOT NULL,
-  quiz_id int NOT NULL,
+  quiz_id varchar(36) NOT NULL NOT NULL,
   FOREIGN KEY (quiz_id) REFERENCES quiz_table(id)
 );
 
-CREATE TABLE multiple_choice_answer_table (
-  id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE answer_table (
+  id varchar(36) NOT NULL PRIMARY KEY,
   answer varchar(255) NOT NULL
 );
 
-CREATE TABLE multiple_choice_question_answer_table (
-  id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  question_id int NOT NULL,
-  answer_id int NOT NULL,
+CREATE TABLE question_answer_table (
+  id varchar(36) NOT NULL PRIMARY KEY,
+  question_id varchar(36) NOT NULL NOT NULL,
+  answer_id varchar(36) NOT NULL NOT NULL,
   correct_answer tinyint(1) NOT NULL,
-  FOREIGN KEY(question_id) REFERENCES multiple_choice_question_table(id),
-  FOREIGN KEY(answer_id) REFERENCES multiple_choice_answer_table(id)
+  FOREIGN KEY(question_id) REFERENCES question_table(id),
+  FOREIGN KEY(answer_id) REFERENCES answer_table(id)
 );
-
-#insert into quiz_table (name, book) value ("Hardest quiz eva", "1");
-
-#insert into multiple_choice_question_table(question, quiz_id) values("This is some complicated question", (
-#  SELECT id FROM quiz_table where name = "Hardest quiz eva"
-#));
-
-#insert into multiple_choice_question_table(question, quiz_id) values("This is some easy", (
-#  SELECT id FROM quiz_table where name = "Hardest quiz eva"
-#));
-
-#insert into multiple_choice_answer_table(answer) values("This is the correct answer");
-
-#insert into multiple_choice_question_answer_table(question_id, answer_id, correct_answer) values((
-#  SELECT id FROM multiple_choice_question_table where question = "This is some complicated question"
-#),
-#(
-#  SELECT id FROM multiple_choice_answer_table where answer = "This is the correct answer"
-#),
-#true);
