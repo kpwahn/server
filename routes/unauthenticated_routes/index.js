@@ -10,7 +10,6 @@ router.use('/', require('./get/question/question.js'));
 router.use('/create-user', require('./create_user'));
 router.use('/authenticate', require('./authenticate.js'));
 router.use('/create-quiz', require('./create_quiz.js'));
-router.use('/question', require('./question.js'));
 router.use('/create-answer', require('./create_answer.js'));
 router.use('/create-question', require('./create_question.js'));
 
