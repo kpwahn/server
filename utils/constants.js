@@ -7,6 +7,7 @@ module.exports = {
         db_connect: "Could not establish connection to the database",
         db_query: "Could not query the database",
         duplicate_email: "Email address already exists",
+        duplicate_book: "Book name already exists",
         duplicate_quiz: "Quiz name already exists",
         duplicate_answer: "Answer already exists",
         duplicate_question: "Question already exists",
@@ -24,10 +25,12 @@ module.exports = {
         authenticated: "Authenticated",
         new_quiz: "New quiz created",
         new_answer: "Answer added to question",
-        new_question: "Question added to quiz"
+        new_question: "Question added to quiz",
+        new_book: "Book added"
     },
     expected_bodies: {
         create_user: ['email', 'password'],
+        create_book: ['name'],
         create_quiz: ['name', 'book'],
         create_answer: ['answer', 'question_id', 'correct'],
         create_question: ['question', 'quiz_id']

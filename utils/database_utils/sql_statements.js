@@ -2,6 +2,7 @@ module.exports = {
   get_books: "select * from book_table;",
   get_book: "select * from book_table where id = ?;",
   get_book_by_name: "select * from book_table where name = ?;",
+  insert_book: "insert into book_table values (UUID(), ?);",
 
   get_quizzes: "select * FROM quiz_table where book_id = ?;",
   get_quiz: "select * from quiz_table where id = ?;",
@@ -19,18 +20,5 @@ module.exports = {
   insert_answer: "insert into answer_table values (UUID(), ?, ?, ?);",
 
   get_email : 'SELECT * FROM user_table WHERE email = ?;',
-  insert_email: 'INSERT INTO user_table (id, email, password) VALUES (UUID(), ?, ?);',
-
-
-
-
-
-
-
-
-  select_question: "SELECT * FROM multiple_choice_question_table WHERE question = ?;",
-  select_question_by_id: "SELECT * FROM multiple_choice_question_table WHERE quiz_id = ?;",
-  select_quiz_query_weridness:  "SELECT * FROM quiz_table WHERE name =",
-  select_answer: "SELECT * FROM multiple_choice_answer_table where answer = ?;",
-  insert_question_answer: "INSERT into multiple_choice_question_answer_table(question_id, answer_id, correct_answer) VALUES (?,?,?);"
+  insert_email: 'INSERT INTO user_table (id, email, password) VALUES (UUID(), ?, ?);'
 }
