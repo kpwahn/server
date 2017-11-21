@@ -6,6 +6,7 @@ router.use('/', require('./get/quiz/quizzes.js'));
 router.use('/', require('./get/quiz/quiz.js'));
 router.use('/', require('./get/question/questions.js'));
 router.use('/', require('./get/question/question.js'));
+router.use('/', require('./get/answer/answers.js'));
 
 router.use('/create-user', require('./create_user'));
 router.use('/authenticate', require('./authenticate.js'));

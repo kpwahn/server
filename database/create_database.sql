@@ -47,7 +47,7 @@ CREATE TABLE question_answer_table (
   id varchar(36) NOT NULL PRIMARY KEY,
   question_id varchar(36) NOT NULL NOT NULL,
   answer_id varchar(36) NOT NULL NOT NULL,
-  correct_answer tinyint(1) NOT NULL,
+  correct tinyint(1) NOT NULL,
   FOREIGN KEY(question_id) REFERENCES question_table(id),
   FOREIGN KEY(answer_id) REFERENCES answer_table(id)
 );

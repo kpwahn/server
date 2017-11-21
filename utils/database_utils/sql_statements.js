@@ -5,6 +5,8 @@ module.exports = {
   get_quiz: "select * from quiz_table where id = ?;",
   get_questions: "select * from question_table where quiz_id = ?",
   get_question: "select * from question_table where id = ?;",
+  get_answer_ids: "select * from question_answer_table where question_id = ?;",
+  get_answer: "select * from answer_table where id = ?;",
 
 
 
