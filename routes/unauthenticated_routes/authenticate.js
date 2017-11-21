@@ -6,7 +6,7 @@ let constants = require('../../utils/constants');
 let bodyParser = require('body-parser');
 
 
-router.post('/', bodyParser.json(), function(req, res) {
+router.post('/authenticate', bodyParser.json(), function(req, res) {
     let request_check = post_request_util.checkReqBody(req, ['email', 'password']);
 
     if( !request_check.has_correct_keys ){
@@ -26,6 +26,30 @@ router.post('/', bodyParser.json(), function(req, res) {
             }
         });
     }
+});
+
+router.get('/authenticate', function(req, res) {
+  res.status(status_codes.method_not_allowed);
+  res.set('Allow', ['POST']);
+  res.json({ message: constants.method_not_allowed});
+});
+
+router.put('/authenticate', function(req, res) {
+  res.status(status_codes.method_not_allowed);
+  res.set('Allow', ['POST']);
+  res.json({ message: constants.method_not_allowed});
+});
+
+router.patch('/authenticate', function(req, res) {
+  res.status(status_codes.method_not_allowed);
+  res.set('Allow', ['POST']);
+  res.json({ message: constants.method_not_allowed});
+});
+
+router.delete('/authenticate', function(req, res) {
+  res.status(status_codes.method_not_allowed);
+  res.set('Allow', ['POST']);
+  res.json({ message: constants.method_not_allowed});
 });
 
 module.exports = router;

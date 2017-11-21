@@ -7,7 +7,7 @@ let status_codes = require('../../utils/request_utils/status_codes');
 let constants = require('../../utils/constants');
 let bodyParser = require('body-parser');
 
-router.post('/', bodyParser.json(), function (req, res) {
+router.post('/create-user', bodyParser.json(), function (req, res) {
     let request_check = post_request_util.checkReqBody(req, constants.expected_bodies.create_user);
 
     if( !request_check.has_correct_keys ){
@@ -26,7 +26,7 @@ router.post('/', bodyParser.json(), function (req, res) {
                         res.json({ message: constants.error_messages.db_connect, err: err});
                     } else {
                         // 2. CHECK IF EMAIL ALREADY EXISTS
-                        connection.query(sql_statements.select_email, [req.body.email], function (err, rows) {
+                        connection.query(sql_statements.get_email, [req.body.email], function (err, rows) {
                             if (err) {
                                 res.status(status_codes.internal_server_error);
                                 res.json({ message: constants.error_messages.db_query, err: err});
@@ -56,27 +56,27 @@ router.post('/', bodyParser.json(), function (req, res) {
     }
 });
 
-router.get('/', function(req, res) {
-  // TODO The response MUST include an Allow header containing a list of valid methods for the requested resource.
+router.get('/create-user', function(req, res) {
   res.status(status_codes.method_not_allowed);
+  res.set('Allow', ['POST']);
   res.json({ message: constants.method_not_allowed});
 });
 
-router.put('/', function(req, res) {
-  // TODO The response MUST include an Allow header containing a list of valid methods for the requested resource.
+router.put('/create-user', function(req, res) {
   res.status(status_codes.method_not_allowed);
+  res.set('Allow', ['POST']);
   res.json({ message: constants.method_not_allowed});
 });
 
-router.patch('/', function(req, res) {
-  // TODO The response MUST include an Allow header containing a list of valid methods for the requested resource.
+router.patch('/create-user', function(req, res) {
   res.status(status_codes.method_not_allowed);
+  res.set('Allow', ['POST']);
   res.json({ message: constants.method_not_allowed});
 });
 
-router.delete('/', function(req, res) {
-  // TODO The response MUST include an Allow header containing a list of valid methods for the requested resource.
+router.delete('/create-user', function(req, res) {
   res.status(status_codes.method_not_allowed);
+  res.set('Allow', ['POST']);
   res.json({ message: constants.method_not_allowed});
 });
 

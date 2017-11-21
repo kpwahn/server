@@ -15,7 +15,8 @@ module.exports = {
         no_token: 'No token provided',
         token_auth_failed: 'Failed to authenticate token',
         method_not_allowed: 'The method specified is not allowed for the resource',
-        question_not_found: "Question not found"
+        question_not_found: "Question not found",
+        book_not_found: "Book not found"
     },
     success_messages: {
         new_user: "New user created",

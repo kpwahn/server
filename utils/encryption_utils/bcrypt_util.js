@@ -21,7 +21,7 @@ module.exports = {
             if(err) {
                 callback(err, false);
             }
-            connection.query(sql_statements.select_email, [email], function (err, rows) {
+            connection.query(sql_statements.get_email, [email], function (err, rows) {
                 connection.release();
                 if (err) {
                     callback(err, false);
