@@ -16,7 +16,8 @@ module.exports = {
         token_auth_failed: 'Failed to authenticate token',
         method_not_allowed: 'The method specified is not allowed for the resource',
         question_not_found: "Question not found",
-        book_not_found: "Book not found"
+        book_not_found: "Book not found",
+        quiz_not_found: "No quiz found"
     },
     success_messages: {
         new_user: "New user created",
@@ -28,8 +29,8 @@ module.exports = {
     expected_bodies: {
         create_user: ['email', 'password'],
         create_quiz: ['name', 'book'],
-        create_answer: ['answer', 'question', 'correct'],
-        create_question: ['question', 'quiz_name']
+        create_answer: ['answer', 'question_id', 'correct'],
+        create_question: ['question', 'quiz_id']
     },
     expected_query_params: {
       question: ['quiz_name']
