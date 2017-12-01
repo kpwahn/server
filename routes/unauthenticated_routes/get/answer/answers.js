@@ -17,9 +17,16 @@ router.get('/books/:book_id/quizzes/:quiz_id/questions/:question_id/answers', fu
           res.json({ message: constants.error_messages.db_query, err: err});
         } else {
           res.status(status_codes.ok);
-          rows.forEach(function(row){
-            delete row.correct;
-          })
+
+          if(req.query.correct){
+            rows = rows.filter(function(row){
+              return row.correct
+            })
+          } else {
+            rows.forEach(function(row){
+              delete row.correct;
+            })
+          }
           res.send({data: rows});
         }
       });
