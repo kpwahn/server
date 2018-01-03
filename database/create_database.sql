@@ -17,7 +17,7 @@ CREATE TABLE user_table (
     password varchar(255) NOT NULL
 );
 
-insert into user_table values (UUID(), "k@k.com", "k");
+#insert into user_table values (UUID(), "k@k.com", "k");
 
 CREATE TABLE book_table (
   id varchar(36) NOT NULL PRIMARY KEY,

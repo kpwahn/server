@@ -4,6 +4,7 @@ router.use('/', require('./get/book/books.js'));
 router.use('/', require('./get/book/book.js'));
 router.use('/', require('./get/quiz/quizzes.js'));
 router.use('/', require('./get/quiz/quiz.js'));
+router.use('/', require('./get/answer_keys/answer_key.js'));
 router.use('/', require('./get/question/questions.js'));
 router.use('/', require('./get/question/question.js'));
 router.use('/', require('./get/answer/answers.js'));
